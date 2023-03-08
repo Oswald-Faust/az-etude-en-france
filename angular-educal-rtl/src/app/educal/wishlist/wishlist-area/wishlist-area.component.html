@@ -1,0 +1,57 @@
+<section class="cart-area pt-100 pb-100">
+  <div class="container">
+     <div class="row">
+        <div class="col-12">
+              <form action="#">
+                 <div class="table-content table-responsive">
+                    <table class="table">
+                          <thead>
+                             <tr>
+                                <th class="product-thumbnail">Images</th>
+                                <th class="cart-product-name">Product</th>
+                                <th class="product-price">Unit Price</th>
+                                <th class="product-quantity">Quantity</th>
+                                <th class="product-subtotal">Total</th>
+                                <th class="product-remove">Remove</th>
+                             </tr>
+                          </thead>
+                          <tbody class="border-0">
+                             <tr>
+                                <td class="product-thumbnail">
+                                  <a [routerLink]="['/course-details']">
+                                    <img src="assets/img/course/sm/cart-3.jpg" alt=""></a>
+                                  </td>
+                                <td class="product-name">
+                                  <a [routerLink]="['/course-details']">
+                                    Fundamentals of music theory Learn new</a></td>
+                                <td class="product-price"><span class="amount">$130.00</span>
+                                </td>
+                                <td class="product-quantity">
+                                      <button class="e-btn e-btn-border" type="submit">Add TO Cart</button>
+                                </td>
+                                <td class="product-subtotal"><span class="amount">$130.00</span></td>
+                                <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                             </tr>
+                             <tr>
+                                <td class="product-thumbnail">
+                                  <a [routerLink]="['/course-details']">
+                                    <img src="assets/img/course/sm/cart-2.jpg" alt=""></a>
+                                  </td>
+                                <td class="product-name">
+                                  <a [routerLink]="['/course-details']">Strategy law and organization Foundation </a>
+                                </td>
+                                <td class="product-price"><span class="amount">$120.50</span></td>
+                                <td class="product-quantity">
+                                      <button class="e-btn e-btn-border" type="submit">Add TO Cart</button>
+                                </td>
+                                <td class="product-subtotal"><span class="amount">$120.50</span></td>
+                                <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                             </tr>
+                          </tbody>
+                    </table>
+                 </div>
+              </form>
+        </div>
+     </div>
+  </div>
+</section>

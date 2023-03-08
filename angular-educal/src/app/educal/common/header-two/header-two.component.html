@@ -1,0 +1,128 @@
+<header>
+    <div id="header-sticky" [ngClass]="headerSticky ? 'header__area header__transparent header__padding-2 sticky' : headerShadow ? headerShadow : 'header__area header__transparent header__padding-2' "
+     >
+       <div class="container">
+          <div class="row align-items-center">
+             <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-4 col-6">
+                <div class="header__left d-flex">
+                   <div class="logo">
+                      <a [routerLink]="['/']" >
+                         <img src="assets/img/logo/logo.png" alt="logo">
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-10 col-sm-8 col-6">
+                <div class="header__right d-flex justify-content-end align-items-center">
+                   <div class="main-menu main-menu-2">
+                      <nav id="mobile-menu" class="d-none d-xl-block">
+                         <ul>
+                            <li>
+                              <a [routerLink]="['/']">Accueil</a>
+                            </li>
+                            <li class="has-dropdown">
+                              <a [routerLink]="['/courses']">Trouver un logement</a>
+                              <ul class="submenu">
+                                 <li><a [routerLink]="['/courses']">Les meilleures villes</a></li>
+                                 <li><a [routerLink]="['/courses-list']">Appartements en vogue</a></li>
+                                 <li><a [routerLink]="['/courses-sidebar']">Démarche appartement</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a [routerLink]="['/blog']">Blog</a>
+                              <li><a [routerLink]="['/about']">A propos</a></li>
+                           <li><a [routerLink]="['/contact']">Contact</a></li>
+                         </ul>
+                      </nav>
+                   </div>
+                   <div class="header__btn ml-20 d-none d-sm-block">
+                    <a [routerLink]="['/sign-up']" class="e-btn">S'inscrire</a>
+                 </div>
+                   <div class="header__btn ml-20 d-none d-sm-block">
+                    <a [routerLink]="['/sign-in']" class="e-btn">Se connecter</a>
+                 </div>
+                   <div class="sidebar__menu d-xl-none">
+                      <div (click)="handleSidebar()" class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                          <span class="line"></span>
+                      </div>
+                  </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </header>
+
+<div class="sidebar__area" [class.sidebar-opened]="showSidebar">
+  <div class="sidebar__wrapper">
+    <div (click)="handleSidebarClose()" class="sidebar__close">
+        <button class="sidebar__close-btn" id="sidebar__close-btn">
+        <span><i class="fal fa-times"></i></span>
+        <span>close</span>
+        </button>
+    </div>
+    <div class="sidebar__content">
+        <div class="logo mb-40">
+          <a [routerLink]="['/']">
+            <img src="../../assets/img/logo/logo.png" alt="logo">
+          </a>
+        </div>
+
+         <div class="side-info-content sidebar-menu mm-menu">
+
+            <ul>
+              <li class="menu-item-has-children"
+              [class.active]="showHomeDropdown">
+              <a [routerLink]="['/home-three']">Accueil</a>
+              </li>
+
+              <li class="menu-item-has-children has-droupdown"
+              [class.active]="showCoursesDropdown">
+                    <a (click)="coursesDropdown()">Trouver un logement</a>
+                    <ul class="sub-menu" [class.active]="showCoursesDropdown">
+                          <li>
+                            <a [routerLink]="['/courses']">Les meilleures villes</a>
+                          </li>
+                          <li>
+                            <a [routerLink]="['/courses-list']">Appartement en vogue</a>
+                          </li>
+                          <li>
+                            <a [routerLink]="['/courses-sidebar']">Démarche appartement</a>
+                          </li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-item-has-children"
+                  [class.active]="showBlogDropdown">
+
+                  <a [routerLink]="['/blog']">Blog</a>
+              </li>
+
+              <li>
+                <a [routerLink]="['/about']" class="border-0">A propos de nous</a>
+            </li>
+
+              <li>
+                  <a [routerLink]="['/contact']" class="border-0">Contact</a>
+              </li>
+
+              <li>
+                <div>
+                 <a [routerLink]="['/sign-in']" class="e-btn">Connexion</a>
+                </div>
+            </li>
+            <li>
+                <div>
+                 <a [routerLink]="['/sign-up']" class="e-btn">Inscription</a>
+                </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+<div (click)="handleSidebarClose()" class="body-overlay"
+[class.opened]="showSidebar"></div>
+<!-- sidebar area end -->

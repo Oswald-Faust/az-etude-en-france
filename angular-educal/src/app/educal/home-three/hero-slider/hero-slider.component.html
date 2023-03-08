@@ -1,0 +1,91 @@
+<section class="slider__area p-relative">
+    <div class="slider__wrapper swiper-container">
+        <swiper class="swiper-wrapper" [slidesPerView]="1" [loop]="true"
+            [effect]="'fade'"
+            [autoplay]="{delay: 5000,disableOnInteraction: false}">
+
+            <ng-template swiperSlide>
+                <div class="single-slider swiper-slide slider__height slider__overlay d-flex align-items-center" [ngStyle]="{background:'url(assets/img/slider/slider-4.jpg)',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
+                                <div class="slider__content">
+                                    <span>Tout pour les études en France</span>
+                                    <h3 class="slider__title">Simplifiez vos études en <span class="yellow-bg">France
+                                    <img src="assets/img/shape/yellow-bg.png" alt=""> </span> en quelques clis !</h3>
+                                    <p>
+                                      Réglez les détails concernant votre installation en France en un rien de temps grâce à un accompagnement personnalisé !</p>
+                                    <a [routerLink]="['/about']" class="e-btn slider__btn">Nous rejoindre</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template swiperSlide>
+               <div class="single-slider swiper-slide slider__height slider__overlay d-flex align-items-center" [ngStyle]="{background:'url(assets/img/slider/slider-1.jpg)',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}">
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
+                               <div class="slider__content">
+                                   <span>Faites vous accompagner de A à Z</span>
+                                   <h3 class="slider__title">Organisez rapidement votre nouvelle vie en<span class="yellow-bg"> France<img src="assets/img/shape/yellow-bg.png" alt=""></span> simplement !</h3>
+                                   <p>Béneficiez du choix de votre logement et faites vous délivrer des attestations fiables</p>
+                                   <a [routerLink]="['/about']" class="e-btn slider__btn">Nous rejoindre</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </ng-template>
+
+            <ng-template swiperSlide>
+               <div class="single-slider swiper-slide slider__height slider__overlay d-flex align-items-center" [ngStyle]="{background:'url(assets/img/slider/slider-2.jpg)',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}">
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
+                               <div class="slider__content">
+                                   <span>Faites vous guider à chaque étape</span>
+                                   <h3 class="slider__title"> Béneficiez des meilleurs <span class="yellow-bg">services <img src="assets/img/shape/yellow-bg.png" alt=""> </span> dans cette aventure</h3>
+                                   <p>Soyez le centre de l'attention de notre équipe, de nos idées et de l'ensemble de nos prestations !</p>
+                                   <a [routerLink]="['/about']" class="e-btn slider__btn">Nous rejoindre</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </ng-template>
+
+            <ng-template swiperSlide>
+               <div class="single-slider swiper-slide slider__height slider__overlay d-flex align-items-center" [ngStyle]="{background:'url(assets/img/slider/slider-3.jpg)',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}">
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
+                               <div class="slider__content">
+                                   <span>Tout pour les études en France</span>
+                                   <h3 class="slider__title">Ayez une <span class="yellow-bg">intégration <img src="assets/img/shape/yellow-bg.png" alt=""> </span> totale et réussie</h3>
+                                   <p>Nous vous accompagnons dans vos besoins, vous ne serez jamais seuls !</p>
+                                   <a [routerLink]="['/about']" class="e-btn slider__btn">Nous rejoindre</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </ng-template>
+        </swiper>
+    </div>
+
+    <div class="row g-0">
+        <div *ngFor="let item of sliderNavData" class="d-none d-md-block col-md-6 col-lg-3">
+            <div class="slider__nav-item swiper-slide" [class]="item.bgColor"
+            [ngStyle]="{background:'url('+ item.img +')',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}">
+                <div class="slider__nav-content">
+                    <span>{{item.title}}</span>
+                    <h4>{{item.subtitle}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

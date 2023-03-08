@@ -1,0 +1,129 @@
+<header>
+    <div id="header-sticky" [ngClass]="headerSticky ? 'header__area header__transparent header__padding-2 sticky' : 'header__area header__transparent header__padding-2' ">
+       <div class="container">
+          <div class="row align-items-center">
+             <div class="col-xxl-2 col-xl-2 col-lg-6 col-md-6 col-sm-6 col-6">
+                <div class="header__left d-flex">
+                   <div class="logo">
+                      <a [routerLink]="['/']">
+                         <img class="logo-white" src="" alt="logo">
+                         <img class="logo-black" src="" alt="logo">
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-xxl-5 col-xl-5 d-none d-xl-block">
+                <div class="main-menu main-menu-3">
+                   <nav id="mobile-menu">
+                      <ul>
+                         <li>
+                         <li>
+                          <a [routerLink]="['/courses']">Trouver un logement</a>
+                         </li>
+                         <li>
+                          <a [routerLink]="['/blog']">Blog</a>
+                         </li>
+                       <li><a [routerLink]="['/about']">A propos</a></li>
+                       <li><a [routerLink]="['/contact']">Contact</a></li>
+                      </ul>
+                   </nav>
+                </div>
+             </div>
+             <div class="col-xxl-5 col-xl-5 col-lg-6 col-md-6 col-sm-6 col-6">
+                <div class="header__right d-flex justify-content-end align-items-center">
+                   <div class="header__btn header__btn-2 ml-30 d-none d-sm-block">
+                      <a [routerLink]="['/sign-in']" class="e-btn">Se connecter</a>
+                   </div>
+                   <div class="header__btn header__btn-2 ml-30 d-none d-sm-block">
+                    <a [routerLink]="['/sign-up']" class="e-btn">S'inscire</a>
+                   </div>
+                   <div class="sidebar__menu d-xl-none">
+                      <div (click)="handleSidebar()" class="sidebar-toggle-btn sidebar-toggle-btn-white ml-30" id="sidebar-toggle">
+                          <span class="line"></span>
+                          <span class="line"></span>
+                          <span class="line"></span>
+                      </div>
+                  </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </header>
+
+ <!-- sidebar area start -->
+ <div class="sidebar__area" [class.sidebar-opened]="showSidebar">
+  <div class="sidebar__wrapper">
+    <div (click)="handleSidebarClose()" class="sidebar__close">
+        <button class="sidebar__close-btn" id="sidebar__close-btn">
+        <span><i class="fal fa-times"></i></span>
+        <span>close</span>
+        </button>
+    </div>
+    <div class="sidebar__content">
+        <div class="logo mb-40">
+          <a [routerLink]="['/']">
+            <img src="../../assets/img/logo/logo.png" alt="logo">
+          </a>
+        </div>
+
+         <div class="side-info-content sidebar-menu mm-menu">
+
+            <ul>
+              <li class="menu-item-has-children"
+              [class.active]="showHomeDropdown">
+                  <a [routerLink]="['/courses-list']">Accueil</a >
+                  <ul class="sub-menu" [class.active]="showHomeDropdown">
+                  </ul>
+              </li>
+
+              <li class="menu-item-has-children has-droupdown"
+              [class.active]="showCoursesDropdown">
+                    <a (click)="coursesDropdown()">Trouver un logement</a>
+                    <ul class="sub-menu" [class.active]="showCoursesDropdown">
+                          <li>
+                            <a [routerLink]="['/courses']">Les meilleures villes</a>
+                          </li>
+                          <li>
+                            <a [routerLink]="['/courses-list']">Appartemment en vogue</a>
+                          </li>
+                          <li>
+                            <a [routerLink]="['/courses-sidebar']">Démarche Appartemment </a>
+                          </li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-item-has-children"
+                  [class.active]="showBlogDropdown">
+
+                  <a [routerLink]="['/courses-list']">Blog</a>
+
+              </li>
+
+              <li class="menu-item-has-children"
+              [class.active]="showPagesDropdown">
+              <a [routerLink]="['/courses-list']">A propos</a>
+              </li>
+
+              <li>
+                  <a [routerLink]="['/contact']" class="border-0">Contact</a>
+              </li>
+              <li>
+                  <div>
+                   <a [routerLink]="['/sign-in']" class="e-btn">Connexion</a>
+                  </div>
+              </li>
+              <li>
+                  <div>
+                   <a [routerLink]="['/sign-up']" class="e-btn">Inscription</a>
+                  </div>
+              </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div (click)="handleSidebarClose()" class="body-overlay"
+[class.opened]="showSidebar"></div>
+<!-- sidebar area end -->
