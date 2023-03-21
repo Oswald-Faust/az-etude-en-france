@@ -8,6 +8,10 @@ var User = require('./User');
 
 // CREATES A NEW USER
 router.post('/', function (req, res) {
+    var mail = res.body.email;
+    const redondance = User.find({name: mail})
+
+    if (redondance != []) return res.status(500).send("this email is already used");
     User.create({
             name : req.body.name,
             email : req.body.email,
@@ -17,14 +21,6 @@ router.post('/', function (req, res) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
             res.status(200).send(user);
         });
-});
-
-// RETURNS ALL THE USERS IN THE DATABASE
-router.get('/', function (req, res) {
-    User.find({}, function (err, users) {
-        if (err) return res.status(500).send("There was a problem finding the users.");
-        res.status(200).send(users);
-    });
 });
 
 // GETS A SINGLE USER FROM THE DATABASE
