@@ -35,8 +35,8 @@ export class HeroSliderComponent implements OnInit {
     {
       id: 4,
       img: 'assets/img/slider/nav/slider-nav-3.jpg',
-      title: "Démarches bancaires",
-      subtitle: "Sécurisez vos transactions",
+      title: "Attestations de logement",
+      subtitle: "Béneficiez de vos documents",
       bgColor: "green-bg",
     },
   ]

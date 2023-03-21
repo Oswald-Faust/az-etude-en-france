@@ -18,7 +18,7 @@
         }
     }
     &__banner{
-        
+
         @media #{$xs}{
             margin-top: -25px;
         }
@@ -95,7 +95,7 @@
                 margin-bottom: 5px;
                 & i{
                     font-size: 16px;
-                    color: $e-green;
+                    color: #f00;;
                     padding-right: 9px;
                 }
             }

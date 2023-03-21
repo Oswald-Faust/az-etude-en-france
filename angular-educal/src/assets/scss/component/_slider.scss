@@ -42,8 +42,8 @@
         position: relative;
         z-index: 1;
         & span{
-            font-size: 18px;
-            color: $e-yellow;
+            font-size: 28px;
+            color: #0d19c2;
             margin-bottom: 12px;
             display: inline-block;
         }
@@ -179,7 +179,7 @@
                 }
             }
             &.swiper-slide-thumb-active{
-                
+
             }
         }
         &-content{

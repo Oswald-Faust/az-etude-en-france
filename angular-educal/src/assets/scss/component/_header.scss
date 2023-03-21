@@ -175,7 +175,7 @@
 				background-color: $white;
 			}
 		}
-		
+
 	}
 	&__category{
 		position: relative;
@@ -425,7 +425,7 @@
                             padding: 0 15px;
                         }
                         @media #{$sm}{
-                            font-size: 16px;    
+                            font-size: 16px;
                             padding: 0 5px;
                         }
                         @media #{$xs}{
@@ -598,9 +598,9 @@
                             height: 100%;
                             background: $e-blue;
                             z-index: -1;
-                            
+
                         }
-                        
+
                     }
                     & .submenu{
                         left: 120%;
@@ -923,7 +923,7 @@
 				background: $e-blue;
 				@include border-radius(50%);
 				font-weight: 500;
-				@include box-shadow(0px 10px 20px 0px rgba(4, 23, 118, 0.3));
+				@include box-shadow(0px 10px 20px 0px rgba(103, 255, 15, 0.3));
 			}
 			&:hover{
 				& .cart-item{
