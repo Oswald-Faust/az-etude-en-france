@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeTwoComponent } from './educal/home-two/home-two-main/home-two.component';
 import { HomeThreeComponent } from './educal/home-three/home-three-main/home-three.component';
 import { BlogComponent } from './educal/blog/blog-main/blog.component';
 import { BlogDetailsMainComponent } from './educal/blog-details/blog-details-main/blog-details-main.component';
@@ -12,12 +11,6 @@ import { ContactMainComponent } from './educal/contact/contact-main/contact-main
 
 
 const routes: Routes = [
- /* { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },*/
-  /*{
-    path: 'home-two',
-    component: HomeTwoComponent
-  },*/
   {
     path: '',
     component: HomeThreeComponent
