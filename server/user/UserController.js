@@ -6,12 +6,12 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 var User = require('./User');
 
+router.get('/', function(req, res) {
+
+})
+
 // CREATES A NEW USER
 router.post('/', function (req, res) {
-    var mail = res.body.email;
-    const redondance = User.find({name: mail})
-
-    if (redondance != []) return res.status(500).send("this email is already used");
     User.create({
             name : req.body.name,
             email : req.body.email,
