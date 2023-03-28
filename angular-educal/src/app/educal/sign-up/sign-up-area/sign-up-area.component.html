@@ -28,32 +28,32 @@
                  </div>
               </div> -->
               <div class="sign__form">
-                 <form action="#">
+                <form #userForm="ngForm" (submit)="onClickSubmit(userForm)">
                     <div class="sign__input-wrapper mb-25">
                        <h5>Votre nom</h5>
                        <div class="sign__input">
-                          <input type="text" placeholder="Votre nom">
+                        <input type="text" placeholder="Votre nom" name="username" ngModel>
                           <i class="fal fa-user"></i>
                        </div>
                     </div>
                     <div class="sign__input-wrapper mb-25">
                        <h5>Adresse mail</h5>
                        <div class="sign__input">
-                          <input type="text" placeholder="Adresse mail">
+                        <input type="text" placeholder="Adresse mail" name="email" ngModel>
                           <i class="fal fa-envelope"></i>
                        </div>
                     </div>
                     <div class="sign__input-wrapper mb-25">
                        <h5>Mot de passe</h5>
                        <div class="sign__input">
-                          <input type="text" placeholder="Mot de passe">
+                          <input type="text" placeholder="Mot de passe" name="passwd1" ngModel>
                           <i class="fal fa-lock"></i>
                        </div>
                     </div>
                     <div class="sign__input-wrapper mb-10">
                        <h5>Réecrire le mot de passe</h5>
                        <div class="sign__input">
-                          <input type="text" placeholder="Réecrire le mot de passe">
+                          <input type="text" placeholder="Réecrire le mot de passe" name="passwd2" ngModel>
                           <i class="fal fa-lock"></i>
                        </div>
                     </div>
@@ -65,11 +65,11 @@
                        </div>
                     </div>
                     <button class="e-btn w-100"> <span></span> S'inscrire</button>
-                    <div class="sign__new text-center mt-20">
-                       <p>Déjà sur A-Z Etudes en France ?<a [routerLink]="['/sign-in']"> Se connecter</a></p>
-                    </div>
                  </form>
-              </div>
+                  <div class="sign__new text-center mt-20">
+                     <p>Déjà sur A-Z Etudes en France ?<a [routerLink]="['/sign-in']"> Se connecter</a></p>
+                  </div>
+               </div>
            </div>
         </div>
      </div>

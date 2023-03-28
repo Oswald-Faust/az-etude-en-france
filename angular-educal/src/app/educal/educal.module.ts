@@ -43,6 +43,8 @@ import { ContactMainComponent } from './contact/contact-main/contact-main.compon
 import { ContactAreaComponent } from './contact/contact-area/contact-area.component';
 import { ContactInfoComponent } from './contact/contact-info/contact-info.component';
 import { BlogTwoComponent } from './home-two/blog-two/blog-two.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -93,6 +95,8 @@ import { BlogTwoComponent } from './home-two/blog-two/blog-two.component';
     RouterModule,
     MatTabsModule,
     SwiperModule,
+    FormsModule,
+    HttpClientModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

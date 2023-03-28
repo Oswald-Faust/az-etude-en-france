@@ -27,18 +27,18 @@
                  </div>
               </div>
               <div class="sign__form">
-                 <form action="#">
+                 <form #userForm="ngForm" (submit)="onClickSubmit(userForm)">
                     <div class="sign__input-wrapper mb-25">
                        <h5>Adresse mail</h5>
                        <div class="sign__input">
-                          <input type="text" placeholder="Adresse Mail">
+                          <input type="text" placeholder="Adresse Mail" name="email" ngModel>
                           <i class="fal fa-envelope"></i>
                        </div>
                     </div>
                     <div class="sign__input-wrapper mb-10">
                        <h5>Mot de passe</h5>
                        <div class="sign__input">
-                          <input type="text" placeholder="Mot de passe">
+                          <input type="text" placeholder="Mot de passe" name="passwd" ngModel>
                           <i class="fal fa-lock"></i>
                        </div>
                     </div>
