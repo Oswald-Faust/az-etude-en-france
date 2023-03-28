@@ -8,10 +8,10 @@ var User = require('./User');
 
 router.get('/', function(req, res) {
 
-});
+})
 
 // CREATES A NEW USER
-router.post('/signup', function (req, res) {
+router.post('/', function (req, res) {
     User.create({
             name : req.body.name,
             email : req.body.email,
@@ -21,8 +21,6 @@ router.post('/signup', function (req, res) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
             res.status(200).send(user);
         });
-    
-    
 });
 
 // GETS A SINGLE USER FROM THE DATABASE
@@ -48,44 +46,6 @@ router.put('/:id', function (req, res) {
         if (err) return res.status(500).send("There was a problem updating the user.");
         res.status(200).send(user);
     });
-});
-
-router.post('/signup', function (req, res) {
-    const email = req.body.email;
-    const passwd = req.body.password;
-    const username = req.body.name;
-
-    User.findOne({ email:email }, (err, user) => {
-        if(err){
-            console.log(err);
-            res.status(500).send('Internal server error');
-            return;
-        }
-
-        if(user){
-            res.status(409).send('User already exists');
-            return;
-        }
-    });
-
-    const newUser = new User({
-        email:email,
-        password:passwd,
-        name:username,
-    })
-
-    new User.save()
-    User.create({
-            name : req.body.name,
-            email : req.body.email,
-            password : req.body.password
-        },
-        function (err, user) {
-            if (err) return res.status(500).send("There was a problem adding the information to the database.");
-            res.status(200).send(user);
-        });
-    
-    
 });
 
 module.exports = router;
