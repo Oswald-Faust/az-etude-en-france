@@ -16,7 +16,8 @@ const routes: Routes = [
     component: HomeThreeComponent
   },
   {
-    path: 'blog',    component: BlogComponent
+    path: 'blog',
+    component: BlogComponent
   },
   {
     path: 'blog-details',
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'sign-up',
     component: SignUpMainComponent
+  },
+  {
+    path: 'dashboard',
+    component: AboutMainComponent
   },
   {
     path: 'error',

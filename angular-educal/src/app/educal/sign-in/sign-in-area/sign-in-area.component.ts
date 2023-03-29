@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserType } from '../../../helpers/types';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in-area',
@@ -10,7 +10,7 @@ import { UserType } from '../../../helpers/types';
 })
 export class SignInAreaComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -18,12 +18,20 @@ export class SignInAreaComponent implements OnInit {
   onClickSubmit(userForm: NgForm) {
     const formData = new FormData();
 
-    formData.append("name", userForm.value.username);
     formData.append("email", userForm.value.email);
-
-    formData.append("password", userForm.value.passwd1);
+    formData.append("password", userForm.value.passwd);
 
     // envoyer une requete post au serveur qui fera une query sur la db afin de récupérer le user.
-    // après, vous gérez comme vous voulez le login l'essentiel, c'est d'avoir le user qui se connecte.
+    this.http.post('http://localhost:3000/api/login', formData)
+    .subscribe({
+      next: (response:any) => {
+        console.log(response);
+        window.location.href = '/contact';
+      },
+      error: (error:any) => console.log( error),
+    });
+
+
+
  }
 }
