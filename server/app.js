@@ -11,7 +11,7 @@ app.use((req, res, next) => {
   });
 
 var UserController = require('./user/UserController');
-app.use('/users', UserController);
+app.use('/api', UserController);
 
 
 module.exports = app;
