@@ -18,7 +18,7 @@ export class SignUpAreaComponent implements OnInit {
   }
 
   onClickSubmit(userForm: NgForm) {
-    // this.submit(userForm);
+    this.submit(userForm);
     console.log(userForm);
 
   }
