@@ -18,25 +18,31 @@ export class SignUpAreaComponent implements OnInit {
   }
 
   onClickSubmit(userForm: NgForm) {
-    // if(userForm.value.pawwsd1 === userForm.value.pawwsd2){
-      const formData = new FormData();
+    // this.submit(userForm);
+    console.log(userForm);
 
-      formData.append("name", userForm.value.username);
-      formData.append("email", userForm.value.email);
-      formData.append("password", userForm.value.passwd1);  
+  }
 
-      // on envoie une requête de type post au serveur pour lui fournir les informations sur le user qui arrive.
-      this.http.post('http://localhost:3000/api/signup', formData)
-      .subscribe({
-        next: (response:any) => {
-          console.log(response);
-          window.location.href = '/contact';
-        },
-        error: (error:any) => console.log( error),
-      });
+  submit(userForm:NgForm){
+        // if(userForm.value.pawwsd1 === userForm.value.pawwsd2){
+          const formData = new FormData();
 
-    // } else {
-    //   console.log("Fuck unequal passwords");
-    // }
+          formData.append("name", userForm.value.username);
+          formData.append("email", userForm.value.email);
+          formData.append("password", userForm.value.passwd1);  
+    
+          // on envoie une requête de type post au serveur pour lui fournir les informations sur le user qui arrive.
+          this.http.post('http://localhost:3000/api/signup', formData)
+          .subscribe({
+            next: (response:any) => {
+              console.log(response);
+              window.location.href = '/contact';
+            },
+            error: (error:any) => console.log( error),
+          });
+    
+        // } else {
+        //   console.log("Fuck unequal passwords");
+        // }    
   }
 }

@@ -9,7 +9,6 @@ import { SignUpMainComponent } from './educal/sign-up/sign-up-main/sign-up-main.
 import { ErrorPageComponent } from './educal/error-page/error-page.component';
 import { ContactMainComponent } from './educal/contact/contact-main/contact-main.component';
 
-
 const routes: Routes = [
   {
     path: '',

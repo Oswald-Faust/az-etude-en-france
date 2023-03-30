@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
@@ -91,7 +90,6 @@ router.post('/login', multer().none(), (req, res) => {
           .send({message: "Logged In Successfully"});
         }
         else {
-          console.log("er");
           return res.status(401).json({message: "Wrong credentials."});
         }
       } else {
@@ -102,11 +100,10 @@ router.post('/login', multer().none(), (req, res) => {
 
 // Logout
 router.get("/logout", authorization, (req, res) => {
-  return res
-    .clearCookie("access_token")
-    .status(200)
-    .json({ message: "Successfully logged out 😏 🍀" })
-    .redirect('/');
+  res
+  .clearCookie("access_token")
+  .status(200)
+  .send({message: "Logged out successfully !"});
 });
 
 
