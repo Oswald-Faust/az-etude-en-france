@@ -8,11 +8,12 @@ import { SignInMainComponent } from './educal/sign-in/sign-in-main/sign-in-main.
 import { SignUpMainComponent } from './educal/sign-up/sign-up-main/sign-up-main.component';
 import { ErrorPageComponent } from './educal/error-page/error-page.component';
 import { ContactMainComponent } from './educal/contact/contact-main/contact-main.component';
+import { HomeTwoComponent } from './educal/home-two/home-two-main/home-two.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeThreeComponent
+    component: HomeTwoComponent
   },
   {
     path: 'blog',

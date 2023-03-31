@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-area',
@@ -10,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SignUpAreaComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router:Router) {
+  constructor(private http: HttpClient) {
     
    }
 
@@ -44,5 +43,9 @@ export class SignUpAreaComponent implements OnInit {
         // } else {
         //   console.log("Fuck unequal passwords");
         // }    
+  }
+
+  signUpWithGoogle() {
+    console.log("Fuck !")
   }
 }
