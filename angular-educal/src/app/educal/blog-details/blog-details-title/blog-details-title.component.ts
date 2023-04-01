@@ -11,5 +11,4 @@ export class BlogDetailsTitleComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
