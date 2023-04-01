@@ -1,0 +1,51 @@
+<section class="testimonial__area pt-145 pb-150" [ngStyle]="{background:'url(assets/img/testimonial/home-3/testimonial-bg-3.jpg)',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}">
+    <div class="container">
+       <div class="row">
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-10">
+             <div class="testimonial__slider-3">
+                <h3 class="testimonial__title">Que disent les gens de <br> A - Z Etudes en France ? </h3>
+                <div class="testimonial__slider-wrapper swiper-container testimonial-text mb-35">
+  
+                   <swiper
+                   [loop]="true"
+                   [autoplay]="{ delay: 2500}"
+                   >
+  
+                   <ng-template *ngFor="let testimonial of sliderData" swiperSlide>
+                    <div class="testimonial__item-3">
+                      <p>“After I started learning design with Quillow, I realized that I had improved to very advanced levels. While I am studying at my university, I design as an additional
+                      income and I am sure that I will do this professionally.”</p>
+  
+                      <div class="testimonial__info-2">
+                         <h4>James Lee,</h4>
+                         <span>Student @Educal University</span>
+                      </div>
+  
+                      <div class="testimonial__nav-thumb ">
+                         <img src="{{testimonial.img}}" alt="">
+                      </div>
+                   </div>
+                </ng-template>
+  
+             </swiper>
+          </div>
+       </div>
+    </div>
+  
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-10">
+       <div class="testimonial__video ml-70 fix">
+          <div class="testimonial__thumb-3">
+            <iframe src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="testimonial__video-content d-sm-flex">
+             <div class="testimonial__video-text">
+                <h4>Et vous ?</h4>
+                <p> Qu'attendez-vous pour ne rejoindre enfin pour une fois de bon ? AZ - Etudes en France s'occupe de tout !</p>
+             </div>
+          </div>
+       </div>
+     </div>
+    </div>
+  </div>
+  </section>
+  
