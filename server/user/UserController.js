@@ -29,7 +29,8 @@ const authorization = (req, res, next) => {
 };
 
 // Signup
-router.post('/signup', multer().none(), function (req, res) {
+router.post('/signup', function (req, res) {
+  console.log(req.body);
   const name = req.body.name;
   const email = req.body.email;
   const passwd = req.body.password;
@@ -66,6 +67,7 @@ router.post('/signup', multer().none(), function (req, res) {
 
 // Login
 router.post('/login', multer().none(), (req, res) => {
+  console.log(req.body);
 
   const email = req.body.email;
   const passwd = req.body.password;
@@ -99,7 +101,7 @@ router.post('/login', multer().none(), (req, res) => {
 });
 
 // Logout
-router.get("/logout", authorization, (req, res) => {
+router.get("/signout", authorization, (req, res) => {
   res
   .clearCookie("access_token")
   .status(200)
