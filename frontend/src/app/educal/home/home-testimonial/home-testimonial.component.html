@@ -3,39 +3,56 @@
        <div class="row">
           <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-10">
              <div class="testimonial__slider-3">
-                <h3 class="testimonial__title">Que disent les gens de <br> A - Z Etudes en France ? </h3>
+                <h3 class="testimonial__title">Les meilleurs services <br> pour les étudiants </h3>
                 <div class="testimonial__slider-wrapper swiper-container testimonial-text mb-35">
-  
+
                    <swiper
                    [loop]="true"
-                   [autoplay]="{ delay: 2500}"
+                   [autoplay]="{ delay: 25000}"
                    >
-  
+
                    <ng-template *ngFor="let testimonial of sliderData" swiperSlide>
                     <div class="testimonial__item-3">
-                      <p>“After I started learning design with Quillow, I realized that I had improved to very advanced levels. While I am studying at my university, I design as an additional
-                      income and I am sure that I will do this professionally.”</p>
-  
+                      <p>“Ce qui est incroyable avec AZ - Etudes en France, c'est surtout son service 5 étoiles ! En fournissant mes attestions de résidence,
+                        en me trouvant un logement et en me préparant à ma vie estudiante, il fait presque tout le boulot !”</p>
+
                       <div class="testimonial__info-2">
-                         <h4>James Lee,</h4>
-                         <span>Student @Educal University</span>
+                         <h4>Un étudiant,</h4>
+                         <span> Après avoir testé</span>
                       </div>
-  
+
                       <div class="testimonial__nav-thumb ">
                          <img src="{{testimonial.img}}" alt="">
                       </div>
                    </div>
                 </ng-template>
-  
+
+                <ng-template *ngFor="let testimonial of sliderData" swiperSlide>
+                  <div class="testimonial__item-3">
+                    <p>“Si on doit résumer AZ - Etudes en France, on parlera d'efficacité ! Vous avez tout ce qui peut vous aider à étudier dans la ville de votre
+                      choix en France à votre disposition ! L'attestation de logement, les AVI et j'en passe ! Comment refuser ? </p>
+
+                    <div class="testimonial__info-2">
+                       <h4>Une étudiante,</h4>
+                       <span> Après nos services</span>
+                    </div>
+
+                    <div class="testimonial__nav-thumb ">
+                       <img src="{{testimonial.img}}" alt="">
+                    </div>
+                 </div>
+              </ng-template>
+
              </swiper>
+
           </div>
        </div>
     </div>
-  
+
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-10">
        <div class="testimonial__video ml-70 fix">
           <div class="testimonial__thumb-3">
-            <iframe src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img src="assets/img/course/home-3/course-2.jpg" alt="">
           </div>
           <div class="testimonial__video-content d-sm-flex">
              <div class="testimonial__video-text">
@@ -48,4 +65,3 @@
     </div>
   </div>
   </section>
-  
