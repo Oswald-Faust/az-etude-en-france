@@ -61,7 +61,7 @@ export class SignInAreaComponent implements OnInit {
 
   Login(userObject: User) {
     if (userObject) {
-      this.http.post('http://localhost:3000/api/login', userObject)
+      this.http.post('http://localhost:3000/users/login', userObject)
       .subscribe({
         next: (response:any) => {
           console.log(response);

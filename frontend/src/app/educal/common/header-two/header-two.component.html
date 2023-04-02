@@ -14,7 +14,7 @@
              </div>
              <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-10 col-sm-8 col-6">
                 <div class="header__right d-flex justify-content-end align-items-center">
-                   <div class="main-menu main-menu-2">
+                  <div class="main-menu main-menu-2">
                       <nav id="mobile-menu" class="d-none d-xl-block">
                          <ul>
                             <li>
@@ -30,17 +30,22 @@
                             </li>
                             <li>
                               <a [routerLink]="['/blog']">Blog</a>
-                              <li><a [routerLink]="['/about']">A propos</a></li>
-                           <li><a [routerLink]="['/contact']">Contact</a></li>
+                            </li>
+                            <li>
+                              <a [routerLink]="['/about']">A propos</a>
+                            </li>
+                            <li>
+                              <a [routerLink]="['/contact']">Contact</a>
+                            </li>
                          </ul>
                       </nav>
-                   </div>
-                   <div class="header__btn ml-20 d-none d-sm-block">
+                  </div>
+                  <div class="header__btn ml-20 d-none d-sm-block">
                     <a [routerLink]="['/sign-up']" class="e-btn">S'inscrire</a>
-                 </div>
-                   <div class="header__btn ml-20 d-none d-sm-block">
+                  </div>
+                  <div class="header__btn ml-20 d-none d-sm-block">
                     <a [routerLink]="['/sign-in']" class="e-btn">Se connecter</a>
-                 </div>
+                  </div>
                    <div class="sidebar__menu d-xl-none">
                       <div (click)="handleSidebar()" class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
                         <span class="line"></span>

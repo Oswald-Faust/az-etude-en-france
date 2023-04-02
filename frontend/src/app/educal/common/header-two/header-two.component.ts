@@ -55,5 +55,4 @@ export class HeaderTwoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

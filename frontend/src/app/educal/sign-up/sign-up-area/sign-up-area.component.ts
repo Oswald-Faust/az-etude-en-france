@@ -63,7 +63,7 @@ export class SignUpAreaComponent implements OnInit {
   SignUp(userObject:User){
     if(userObject) {
       // on envoie une requête de type post au serveur pour lui fournir les informations sur le user qui arrive.
-      this.http.post('http://localhost:3000/api/signup', userObject)
+      this.http.post('http://localhost:3000/users/signup', userObject)
       .subscribe({
         next: (response:any) => {
           console.log(response);
