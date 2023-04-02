@@ -21,8 +21,8 @@
             <div class="sign__wrapper white-bg">
                <div class="sign__header mb-35">
                   <div class="sign__in text-center">
+                     <asl-google-signin-button type='standard' size='large' text="signin_with"></asl-google-signin-button>
                      <a (click)="signInWithFB()" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Connexion avec Facebook</a>
-                     <a (click)="signInWithGoogle()" class="sign__social g-plus text-start mb-15"><i class="fab fa-google"></i>Connexion avec Google</a>
                      <p> <span>........</span> Ou, <a [routerLink]="['/sign-in']"> utilisez votre</a> mail <span> ........</span> </p>
                   </div>
                </div>

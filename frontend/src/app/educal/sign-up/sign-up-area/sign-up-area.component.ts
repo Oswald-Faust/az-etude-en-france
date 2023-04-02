@@ -13,12 +13,18 @@ import { User } from 'src/app/helpers/types';
   styleUrls: ['./sign-up-area.component.scss']
 })
 export class SignUpAreaComponent implements OnInit {
+  public googleProvider = GoogleLoginProvider.PROVIDER_ID;
+
+  user!: SocialUser;
+  loggedIn?: boolean;
 
   constructor(private http: HttpClient, private authService:SocialAuthService) {
-    
    }
 
   ngOnInit(): void {
+    this.authService.authState.subscribe((googleUser) => {
+      this.signUpWithGoogle(googleUser);
+    });
   }
 
   onClickSubmit(userForm: NgForm) {
@@ -44,19 +50,29 @@ export class SignUpAreaComponent implements OnInit {
     });
   }
 
-  SignUp(user:User){
-    // on envoie une requête de type post au serveur pour lui fournir les informations sur le user qui arrive.
-    this.http.post('http://localhost:3000/api/signup', user)
-    .subscribe({
-      next: (response:any) => {
-        console.log(response);
-        window.location.href = '/contact';
-      },
-      error: (error:any) => console.log( error),
-    });
+  signUpWithGoogle(googleUser:SocialUser) {
+    const userObject:User = {
+      email: googleUser.email,
+      password: 'Haribo',
+      name: googleUser.name,
+    };
+  
+    this.SignUp(userObject);
   }
 
-  signUpWithGoogle() {
-
+  SignUp(userObject:User){
+    if(userObject) {
+      // on envoie une requête de type post au serveur pour lui fournir les informations sur le user qui arrive.
+      this.http.post('http://localhost:3000/api/signup', userObject)
+      .subscribe({
+        next: (response:any) => {
+          console.log(response);
+          window.location.href = '/contact';
+        },
+        error: (error:any) => console.log( error),
+      });
+    } else {
+      console.error('No user data to suubmit.');
+    }
   }
 }

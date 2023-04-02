@@ -36,6 +36,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { HeaderTwoComponent } from './common/header-two/header-two.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login'
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
     SocialLoginModule,
+    GoogleSigninButtonModule,
   ],
   providers: [
     {
@@ -86,7 +88,7 @@ import { HttpClientModule } from '@angular/common/http';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '873191840760-ctv7a01jk5ohcfmke5t4ma7b5kaer2ch.apps.googleusercontent.com'
+              '873191840760-navh9r89a5fp3pbheqdc32rc02001cmo.apps.googleusercontent.com'
             )
           },
           {

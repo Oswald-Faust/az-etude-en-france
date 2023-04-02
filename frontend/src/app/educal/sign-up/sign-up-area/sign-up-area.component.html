@@ -22,7 +22,7 @@
             <div class="sign__wrapper white-bg">
                <div class="sign__header mb-35">
                   <div class="sign__in text-center">
-                     <a (click)="signUpWithGoogle()" class="sign__social g-plus text-start mb-15"><i class="fab fa-google"></i>Inscription avec Google</a>
+                     <asl-google-signin-button type='standard' size='large' text="signup_with"></asl-google-signin-button>
                      <a (click)="signUpWithFB()" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Inscription avec Facebook</a>
                      <p> <span>........</span> Ou <a [routerLink]="['/sign-up']">Utiliser</a> son adresse mail<span> ........</span> </p>
                   </div>

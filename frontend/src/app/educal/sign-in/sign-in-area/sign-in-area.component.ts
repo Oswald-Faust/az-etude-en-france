@@ -21,8 +21,7 @@ export class SignInAreaComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.authState.subscribe((user) => {
-      this.socialUser = user;
-      this.loggedIn = (user != null);
+      this.signInWithGoogle(user);
     });
   }
 
@@ -37,9 +36,32 @@ export class SignInAreaComponent implements OnInit {
     this.Login(userObject);
   }
 
-  Login(user: User) {
-    if (user) {
-      this.http.post('http://localhost:3000/api/login', user)
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((fbUser) => {
+
+      const userObject:User = {
+        email: fbUser.email,
+        password: 'Haribo',
+        name: fbUser.name,
+      };
+    
+      this.Login(userObject);
+    });
+  }
+
+  signInWithGoogle(googleUser:SocialUser): void {
+    const userObject:User = {
+      email: googleUser.email,
+      password: 'Haribo',
+      name: googleUser.name,
+    };
+  
+    this.Login(userObject)
+  }
+
+  Login(userObject: User) {
+    if (userObject) {
+      this.http.post('http://localhost:3000/api/login', userObject)
       .subscribe({
         next: (response:any) => {
           console.log(response);
@@ -48,38 +70,7 @@ export class SignInAreaComponent implements OnInit {
         error: (error:any) => console.log( error),
       });  
     } else {
-      console.error('No user data to suubmit.');
+      console.error('No user data to submit.');
     }
-  }
-
-  signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((usr) => {
-
-      const userObject:User = {
-        email: usr.email,
-        password: 'Haribo',
-        name: usr.name,
-      };
-    
-      this.Login(userObject)
-    });
-  }
-
-  signOut(): void {
-    this.authService.signOut();
-  }
-
-  refreshToken(): void {
-    this.authService.refreshAccessToken(GoogleLoginProvider.PROVIDER_ID);
-  }
-
-  getAccessToken(): void {
-    this.authService.getAccessToken(GoogleLoginProvider.PROVIDER_ID).then(accessToken => this.accessToken = accessToken);
-  }
-
-  signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((usr) => {
-      console.log(usr);
-    });
   }
 }
