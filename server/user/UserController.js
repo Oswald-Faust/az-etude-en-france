@@ -75,7 +75,7 @@ router.post('/login', multer().none(), (req, res) => {
     .then((user) => {
       if(user){
         // User found
-        if(user.password === passwd){
+        if(user.password === passwd) {
           console.log("found")
           // credentials are good
           // set a cookie or token to indicate that user is logged in
@@ -106,7 +106,6 @@ router.get("/logout", authorization, (req, res) => {
   .send({message: "Logged out successfully !"});
 });
 
-
 const jsonizeUser = (user) => {
   return {
     _id: user._id,
@@ -116,9 +115,6 @@ const jsonizeUser = (user) => {
     __v: user.__v,
   };
 };
-
-
-
 
 // GETS A SINGLE USER FROM THE DATABASE
 router.get('/:id', function (req, res) {

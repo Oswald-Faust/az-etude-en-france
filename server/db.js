@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-// const db_url = 'mongodb+srv://bamenoujeandavid:lol2004_@cluster0.cyo9e2w.mongodb.net/?retryWrites=true&w=majority';
-const db_url = 'mongodb+srv://6fried:6fried@cluster0.lxh3mxk.mongodb.net/?retryWrites=true&w=majority';
+const db_url = 'mongodb+srv://bamenoujeandavid:lol2004_@cluster0.cyo9e2w.mongodb.net/?retryWrites=true&w=majority';
+// const db_url = 'mongodb+srv://6fried:6fried@cluster0.lxh3mxk.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.connect(db_url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connection to MongoDB successful'))
