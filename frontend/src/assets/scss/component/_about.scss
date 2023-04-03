@@ -23,8 +23,8 @@
             margin-top: -25px;
         }
         & img{
-            @include border-radius(6px);
-            max-width: 240px;
+            @include border-radius(15px);
+            max-width: 285px;
         }
     }
     &__content{
