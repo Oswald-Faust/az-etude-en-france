@@ -22,6 +22,29 @@ var BlogArticle = new mongoose.Schema(
   { timestamps: true }
 );
 
-mongoose.model("BlogArticle", BlogArticle);
+var Article = new mongoose.Schema(
+  {
+    title: String,
+    img: String,
+    author: String, 
+    authorImg: String,
+    description: String,
+    content: String,
+    tags: [String],
 
-module.exports = mongoose.model("BlogArticle");
+    comments: [
+      {
+        user: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+        content: String,
+        updated: Date,
+      },
+    ]
+  }
+)
+
+mongoose.model("Article", Article);
+
+module.exports = mongoose.model("Article");

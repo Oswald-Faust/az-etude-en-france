@@ -8,14 +8,15 @@
                       <div class="blog__item white-bg mb-30 transition-3 fix">
                          <div class="blog__thumb w-img fix">
                             <a [routerLink]="['/blog-details']">
-                               <img src="{{blog.blogImg}}" alt="">
+                               <img src="{{blog.img}}" alt="">
                             </a>
                          </div>
                          <div class="blog__content">
                             <div class="blog__tag">
-                               <a href="#" [class]="
-                               blog.color">{{blog.category}}</a>
-                            </div>
+                              <a href="#"></a>
+                              <!-- <a href="#" [class]="
+                              blog.color">{{blog.category}}</a> -->
+                          </div>
                             <h3 class="blog__title">
                               <a [routerLink]="['/blog-details']">{{blog.title}}</a>
                             </h3>
@@ -26,13 +27,16 @@
                                      <img src="{{blog.authorImg}}" alt="">
                                   </div>
                                   <div class="blog__author-info">
-                                     <h5>{{blog.authorName}}</h5>
+                                     <h5>{{blog.author}}</h5>
                                   </div>
                                </div>
                                <div class="blog__date d-flex align-items-center">
-                                  <i class="fal fa-clock"></i>
-                                  <span>{{blog.date}}</span>
-                               </div>
+                                 <i class="fal fa-clock"></i>
+                                 <span>{{blog.date}}</span>
+                              </div>
+                              <div class="blog__date d-flex align-items-center">
+                                 <i class="fal fa-clock"></i>
+                              </div>
                             </div>
                          </div>
                       </div>

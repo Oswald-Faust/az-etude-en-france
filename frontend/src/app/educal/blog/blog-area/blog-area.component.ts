@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { BlogArticle } from 'src/app/helpers/types';
 
 @Component({
   selector: 'app-blog-area',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogAreaComponent implements OnInit {
 
-  blogItems = [
+  blogItemss = [
   {
       id: 1,
       blogImg: 'assets/img/blog/blog-1.jpg',
@@ -70,11 +72,16 @@ export class BlogAreaComponent implements OnInit {
   },
 ]
 
+  blogItems!:BlogArticle[]
 
-
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get('http://localhost:3000/blogs/articles')
+    .subscribe((response:any) => {
+      this.blogItems = response;
+      console.log(response);
+    });
   }
 
 }

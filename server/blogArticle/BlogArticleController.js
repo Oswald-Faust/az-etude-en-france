@@ -25,10 +25,16 @@ router.post("/new", async (req, res) => {
         });
 });
 
-router.get("/article/:title", (req, res) => {
+router.get("/articles", (req, res) => {
+    BlogArticle.find({}).then((articles) => {
+        if(articles) res.status(200).send(articles);
+    })
+})
+
+router.get("/articles/:title", (req, res) => {
     BlogArticle.findOne({title: req.params.title})
         .then((article) => {
-            if (article) res.status(201).send(article)
+            if (article) res.status(200).send(article)
             res.status(404).send("error: can't found article");
         }).catch((err) => {
             res.status(err.status).send("somthing went wrong with this search");
