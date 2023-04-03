@@ -26,7 +26,7 @@ router.post("/new", async (req, res) => {
 });
 
 router.get("/articles", (req, res) => {
-    BlogArticle.find({}).then((articles) => {
+    BlogArticle.find().then((articles) => {
         if(articles) res.status(200).send(articles);
     })
 })

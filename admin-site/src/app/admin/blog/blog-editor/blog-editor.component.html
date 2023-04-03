@@ -1,0 +1,39 @@
+<form #articleForm="ngForm" (submit)="onClickSubmit(articleForm)">
+    <div>
+        <h5>Titre:</h5>
+        <div>
+            <input type="text" placeholder="Titre" name="title" ngModel>
+        </div>
+    </div>
+
+    <div>
+        <h5>Auteur:</h5>
+        <div>
+            <input type="text" placeholder="Author" name="author" ngModel>
+        </div>
+    </div>
+
+    <div>
+        <h5>Description:</h5>
+        <div>
+            <input type="text" placeholder="Description" name="description" ngModel>
+        </div>
+    </div>
+
+    
+    <div>
+        <h5>Tags:</h5>
+        <div>
+            <input type="text" name="tags" ngModel>
+        </div>
+    </div>
+
+    <div>
+        <h5>Contenu:</h5>
+        <div>
+            <ckeditor name="content" ngModel></ckeditor>
+        </div>
+    </div>
+
+    <button class="e-btn  w-100"> <span></span> Connexion </button>
+</form>
