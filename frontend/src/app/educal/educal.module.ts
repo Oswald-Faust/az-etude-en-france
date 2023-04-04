@@ -5,7 +5,7 @@ import { MatTabsModule } from '@angular/material/tabs'
 import { SwiperModule } from 'swiper/angular';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider } from '@abacritt/angularx-social-login';
-
+import { BreadcrumbComponent } from './common/breadcrumb/breadcrumb.component';
 import { HeaderComponent } from './home/header/header.component';
 import { HeroSliderComponent } from './home/hero-slider/hero-slider.component';
 import { HomeCtaComponent } from './home/home-cta/home-cta.component';
@@ -59,6 +59,7 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login'
     ContactMainComponent,
     ContactAreaComponent,
     ContactInfoComponent,
+    BreadcrumbComponent,
     BlogDetailsMainComponent,
     BlogDetailsAreaComponent,
     BlogDetailsTitleComponent,
