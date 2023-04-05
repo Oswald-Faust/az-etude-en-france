@@ -36,7 +36,9 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { HeaderTwoComponent } from './common/header-two/header-two.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login'
+import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { DashboardIndexComponent } from './dashboard/dashboard-index/dashboard-index.component';
+import { DashboardHeaderComponent } from './dashboard/dashboard-header/dashboard-header.component'
 
 @NgModule({
   declarations: [
@@ -69,6 +71,8 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login'
     SignInMainComponent,
     ErrorPageComponent,
     HeaderTwoComponent,
+    DashboardIndexComponent,
+    DashboardHeaderComponent,
   ],
   imports: [
     CommonModule,
