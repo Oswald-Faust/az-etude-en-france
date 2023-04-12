@@ -39,6 +39,10 @@ const routes: Routes = [
      component: SignUpMainComponent
    },
    {
+    path: 'dashboard',
+    loadChildren: () => import('projects/dashboard/src/app/app.module').then(m => m.AppModule)
+   },
+   {
      path: 'error',
      component: ErrorPageComponent
    },

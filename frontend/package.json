@@ -24,6 +24,7 @@
     "rxjs": "~7.8.0",
     "swiper": "^8.4.7",
     "tslib": "^2.3.0",
+    "uikit": "^3.16.14",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
