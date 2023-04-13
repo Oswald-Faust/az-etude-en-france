@@ -35,8 +35,9 @@ import { SignInMainComponent } from './sign-in/sign-in-main/sign-in-main.compone
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { HeaderTwoComponent } from './common/header-two/header-two.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { CookieInterceptor } from '../interceptors/cookie.interceptor';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,11 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
           console.error(err);
         }
       } as SocialAuthServiceConfig,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CookieInterceptor,
+      multi: true
     },
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { FacebookLoginProvider } from '@abacritt/angularx-social-login';
@@ -48,16 +48,14 @@ export class LoginAuthService {
 
   Login(userObject: User) {
     if (userObject) {
+      
       this.http.post('http://localhost:3000/users/login', userObject)
       .subscribe({
         next: (response:any) => {
-          console.log(response);
-          this.authService.signOut();
-          alert("Login Successful !")
-          // window.location.href = '/contact';
+          window.location.href = '/dashboard';
         },
         error: (error:any) => console.log( error),
-      });  
+      });
     } else {
       console.error('No user data to submit.');
     }

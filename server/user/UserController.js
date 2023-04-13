@@ -2,18 +2,23 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const multer = require('multer');
+const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const User = require('./User');
 
-const secretKey = "wcru+JdcEj45PRkNNStoeiyCzdRFbVMaU6B36K3DW7ewKq9+xK5lU4vX7EbKSEuYAgKy0S5M0FkuxyRlS31r1PgPikSd+WrtydgHHljiP6ylcqHA9Ere83ypOT1gE7f95iZ3FOm2GwSIYsGx0d0HWcAvokz5/QJw/wgdlepMPzK6QHuD9JjQTtqOpNMyNIDFO+TBvs/w52221nmeaGHJaY+JDLVbNBAhCxJbkMp9GAzpTHlTeuBZDfuNNGjIuDCEKqPgvzCAxNUcPZUpzB40oeGRqOOWBJPbGpwxE8ziZEvuTWSfCa1D14V/1gwrEQJ+29zUs/FwMdlb5Jq2CVGg8g==";
+const secretKey = "secret-key";
 
+router.use(cors({
+  origin: 'http://localhost:4200',
+  credentials: true
+}));
 router.use(cookieParser());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
 const authorization = (req, res, next) => {
   const token = req.cookies.access_token;
+  console.log(token);
   if (!token) {
     console.log("Forbidden");
     return res.sendStatus(403);
@@ -66,9 +71,7 @@ router.post('/signup', function (req, res) {
 });
 
 // Login
-router.post('/login', multer().none(), (req, res) => {
-  console.log(req.body);
-
+router.post('/login', (req, res) => {
   const email = req.body.email;
   const passwd = req.body.password;
 
@@ -78,26 +81,30 @@ router.post('/login', multer().none(), (req, res) => {
       if(user){
         // User found
         if(user.password === passwd) {
-          console.log("found")
-          // credentials are good
+          // credentials are correct
           // set a cookie or token to indicate that user is logged in
           const token = jwt.sign(jsonizeUser(user), secretKey);
-          res
-          // set a cookie to store our new created user
-          .cookie('access_token', token, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === "production",
-          })
-          .status(200)
-          .send({message: "Logged In Successfully"});
-        }
-        else {
+          res.send({message: 'OK !', token:token});
+          // console.log(res.header().get('set-cookie'))
+        } else {
           return res.status(401).json({message: "Wrong credentials."});
         }
       } else {
         return res.status(404).json({message: "User not found."});
       }
     });
+});
+
+// Get user infos
+router.get('/infos', authorization, (req, res) => {
+  const token = req.cookies.access_token;
+  const data = jwt.verify(token, secretKey);
+  delete data._id;
+  delete data.__v;
+  delete data.iat;
+  delete data.password;
+
+  res.status(200).send(data);
 });
 
 // Logout
@@ -108,7 +115,7 @@ router.get("/signout", authorization, (req, res) => {
   .send({message: "Logged out successfully !"});
 });
 
-const jsonizeUser = (user) => {
+function jsonizeUser (user) {
   return {
     _id: user._id,
     name: user.name,

@@ -51,10 +51,7 @@ export class SignupAuthService {
       this.http.post('http://localhost:3000/users/signup', userObject)
       .subscribe({
         next: (response:any) => {
-          this.authService.signOut();
-          console.log(response);
-          alert("Signup successful !")
-          // window.location.href = '/contact';
+          window.location.href = '/dashboard';
         },
         error: (error:any) => console.log( error),
       });
