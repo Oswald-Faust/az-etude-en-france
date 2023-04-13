@@ -30,4 +30,12 @@ Lancer par la suite le serveur du projet dans le dossier *serve*, ainsi :
 
 **Fichiers sources utiles**
 
-- Dans le répertoire *frontend/src/app/educal*, se trouvent l'ensemble du code source du site. Un dossier "dashboard", non compatible avec Angular et uniquement écrit en HTML illustre l'ensemble des pages du dasboard qui doivent se marier avec Angular. 
+- Dans le répertoire *frontend/src/app/educal*, se trouvent l'ensemble du code source du site. Un dossier "dashboard", non compatible avec Angular et uniquement écrit en HTML illustre l'ensemble des pages du dasboard qui doivent se marier avec Angular.
+
+- Dans le dossier *assets* se trouvent les images.
+
+**Ce qu'il y à faire**
+
+- Un Login adapté qui puisse se connecter au dashboard
+
+- Mieux faire fonctionner le dossier *admin-site* responsable du post d'article vers le front .
