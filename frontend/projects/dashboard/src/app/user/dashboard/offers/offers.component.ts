@@ -20,7 +20,7 @@ export class OffersComponent  implements OnInit{
       withCredentials: true
     };
 
-    this.http.get('http://localhost:3000/users/infos', httpOptions)
+    this.http.get('http://localhost:3000/services/services', httpOptions)
     .subscribe({
       next: (response:any) => {
         this.opportunities = response.opportunities;

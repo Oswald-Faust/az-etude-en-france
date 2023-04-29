@@ -16,9 +16,9 @@ export class CookieInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe( 
       tap( (event: HttpEvent<any>) => { 
-          console.log('Tap event : ', event); 
+          // console.log('Tap event : ', event); 
           if (event instanceof HttpResponse) { 
-            console.log('Http response : ', event, event.status); 
+            // console.log('Http response : ', event, event.status); 
             if (event.body.token != null) {
               const token = event.body.token;
               const cookie = "access_token="+token;
