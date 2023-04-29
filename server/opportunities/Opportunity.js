@@ -5,7 +5,7 @@ var OpportunitySchema = new mongoose.Schema({
     category: String,
     price: Number,
     mark: Number,
-    image: Image,
+    image: String,
 });
 
 mongoose.model('Opportunity', OpportunitySchema);

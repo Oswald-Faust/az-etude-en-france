@@ -97,7 +97,7 @@ router.post('/login', (req, res) => {
 // Get user infos
 router.get('/infos', authorization, (req, res) => {
   const token = req.cookies.access_token;
-  const data = jwt.verify(token, secretKey);
+  let data = jwt.verify(token, secretKey);
   data = {
     name: data.name,
     email:data.email,
