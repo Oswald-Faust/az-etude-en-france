@@ -126,24 +126,21 @@
             <div class="js-popular">
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div class="swiper-slide" *ngFor="let op of services.opportunities">
                             <div class="game-card">
                                 <div class="game-card__box">
                                     <div class="game-card__media"><a href="10_game-profile.html"><img src="assets/img/game-1.jpg" alt="Solitary Crusade" /></a></div>
-                                    <div class="game-card__info"><a class="game-card__title" href="10_game-profile.html"> Aide logements</a>
-                                        <div class="game-card__genre">Réservé aux membres</div>
+                                    <div class="game-card__info"><a class="game-card__title" href="10_game-profile.html"> op.title</a>
+                                        <div class="game-card__genre">op.category</div>
                                         <div class="game-card__rating-and-price">
-                                            <div class="game-card__rating"><span>4.8</span><i class="ico_star"></i></div>
-                                            <div class="game-card__price"><span> 100 - 300 €</span></div>
+                                            <div class="game-card__rating"><span>op.mark</span><i class="ico_star"></i></div>
+                                            <div class="game-card__price"><span> op.price €</span></div>
                                         </div>
                                         <div class="game-card__bottom">
                                             <div class="game-card__platform"><i class="ico_windows"></i><i class="ico_apple"></i></div>
                                             <div class="game-card__users">
                                                 <ul class="users-list">
-                                                    <li><img src="assets/img/user-1.png" alt="user" /></li>
-                                                    <li><img src="assets/img/user-2.png" alt="user" /></li>
-                                                    <li><img src="assets/img/user-3.png" alt="user" /></li>
-                                                    <li><img src="assets/img/user-4.png" alt="user" /></li>
+                                                    <li><img src="assets/img/user-1.png" alt="user" /></li> // *ngFor users using the service
                                                 </ul>
                                             </div>
                                         </div>
@@ -216,6 +213,3 @@
 </div>
 <script src="assets/js/libs.js"></script>
 <script src="assets/js/main.js"></script>
-
-
-

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardMainComponent implements OnInit{
 
-  userData!:object
+  services!:any
   
   constructor(private http:HttpClient) { }
 
@@ -20,11 +20,10 @@ export class DashboardMainComponent implements OnInit{
       withCredentials: true
     };
 
-    this.http.get('http://localhost:3000/users/infos', httpOptions)
+    this.http.get('http://localhost:3000/users/services', httpOptions)
     .subscribe({
       next: (response:any) => {
-        this.userData = response;
-        console.log(this.userData);
+        this.services = response
       },
       error: (error:any) => console.log( error),
     });

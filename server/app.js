@@ -12,8 +12,10 @@ app.use((req, res, next) => {
 
 var BlogArticleController = require('./blogArticle/BlogArticleController');
 var UserController = require('./user/UserController');
+var OpportunitiesController = require('./opportunities/OpportunitiesController')
 
 app.use('/users', UserController);
 app.use('/blogs', BlogArticleController);
+// app.use('/opportunities', OpportunitiesController)
 
 module.exports = app;

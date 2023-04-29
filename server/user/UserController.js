@@ -18,7 +18,6 @@ router.use(bodyParser.json());
 
 const authorization = (req, res, next) => {
   const token = req.cookies.access_token;
-  console.log(token);
   if (!token) {
     console.log("Forbidden");
     return res.sendStatus(403);
@@ -99,11 +98,10 @@ router.post('/login', (req, res) => {
 router.get('/infos', authorization, (req, res) => {
   const token = req.cookies.access_token;
   const data = jwt.verify(token, secretKey);
-  delete data._id;
-  delete data.__v;
-  delete data.iat;
-  delete data.password;
-
+  data = {
+    name: data.name,
+    email:data.email,
+  }
   res.status(200).send(data);
 });
 

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffersComponent  implements OnInit{
 
-  userData!:object
+  opportunities = []
   
   constructor(private http:HttpClient) { }
 
@@ -23,8 +23,7 @@ export class OffersComponent  implements OnInit{
     this.http.get('http://localhost:3000/users/infos', httpOptions)
     .subscribe({
       next: (response:any) => {
-        this.userData = response;
-        console.log(this.userData);
+        this.opportunities = response.opportunities;
       },
       error: (error:any) => console.log( error),
     });
